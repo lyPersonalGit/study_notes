@@ -22,3 +22,12 @@
 | trigger | 触发、调用     | 例如 triggerBtnClick()     |
 | event   | 事件           | 例如 bindBtnClickEvent()   |
 
+### 方法注释常见分类
+
+| 单词   | 释义         | 说明             |
+| ------ | ------------ | ---------------- |
+| render | 渲染         | //[render]方法名 |
+| util   | 功用         | //[util]方法名   |
+| ajax   | 发送http请求 | //[ajax]方法名   |
+| event  | 事件         | //[event]方法名  |
+
