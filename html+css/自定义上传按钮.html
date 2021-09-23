@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .uploadArea {
+            position: relative;
+            display: inline-block;
+        }
+        .uploadArea input {
+            display: none!important;
+            opacity: .01;
+        }
+        .uploadBtn {
+            cursor: pointer;
+            display: inline-block;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 1em;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #2486ff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <label class="uploadArea">
+        <!-- trigger start -->
+        <div class="uploadBtn">
+            上传按钮
+        </div>
+        <!-- trigger end -->
+        <input type="file" name="" id="fileSource">
+    </label>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        function uploadFile(file) {
+            var formData = new FormData();
+            formData.append("file", file);
+            $.ajax({
+                url: "",
+                type: "post",
+                contentType: false,
+                processData: false,
+                data: formData,
+                success: function(res) {
+                    // success callback
+                },
+                error: function(res) {
+                    // error callback
+                }
+            });
+        }
+        $("#fileSource").on("change", function() {
+            var file = this.files[0];
+            console.dir(file);
+            // 校验文件格式
+            uploadFile(file);
+        });
+    </script>
+</body>
+</html>
