@@ -195,4 +195,3 @@ public class UserServiceImpl implements UserService {
 |          | Mapper.selectCount(record)                       | 根据实体中的属性查询总数，查询条件使用等号                   |
 |          | Mapper.selectCountByExample(example)             | 根据Example条件进行查询总数                                  |
 |          | Mapper.selectOne(record)                         | 根据实体中的属性进行查询，只能有一个返回值，有多个结果是抛出异常，查询条件使用等号。但是如果存在某个属性为int，则会初始化为0。可能影响到实际使用 |
-
