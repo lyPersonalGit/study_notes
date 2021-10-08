@@ -141,6 +141,17 @@ public User headerUser(@RequestHeader("id") Long id) {
 
 #### I JSR-303
 
+pom中引入
+
+``` java
+<!-- JSR-303数据校验 -->
+<dependency>
+    <groupId>org.hibernate.validator</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>7.0.1.Final</version>
+</dependency>
+```
+
 JSR-303验证主要是通过注解的方式进行的。先定义一个需要验证的POJO，此时需要在其属性中加入相关的注解。
 
 ``` java
