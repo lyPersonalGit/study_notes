@@ -145,10 +145,10 @@ pom中引入
 
 ``` java
 <!-- JSR-303数据校验 -->
+<!-- spring boot validation -->
 <dependency>
-    <groupId>org.hibernate.validator</groupId>
-    <artifactId>hibernate-validator</artifactId>
-    <version>7.0.1.Final</version>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-validation</artifactId>
 </dependency>
 ```
 
