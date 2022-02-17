@@ -6,7 +6,7 @@
 
 创建Maven项目，确定jdk版本为1.8，勾选从原型创建，选择maven-archetype-site原型。
 
-<img src="D:\personal\study_notes\springboot\Maven父子项目搭建指南\New-Project.png" alt="New Project" style="zoom:80%;" />
+<img src="Maven父子项目搭建指南/New-Project.png" alt="New Project" style="zoom:80%;" />
 
 maven提供的41个骨架原型见附录。
 
@@ -14,37 +14,37 @@ maven提供的41个骨架原型见附录。
 
 为项目命名，选择项目所在目录，并设置项目的GAV（groupId,artifactId,version）。
 
-<img src="D:\personal\study_notes\springboot\Maven父子项目搭建指南\Named-Project.png" alt="Named-Project" style="zoom:80%;" />
+<img src="Maven父子项目搭建指南/Named-Project.png" alt="Named-Project" style="zoom:80%;" />
 
 ### 3. 选择maven版本
 
 选用本地安装的maven与引用的repository。
 
-<img src="D:\personal\study_notes\springboot\Maven父子项目搭建指南\Select-Maven.png" alt="Select-Maven" style="zoom:80%;" />
+<img src="Maven父子项目搭建指南/Select-Maven.png" alt="Select-Maven" style="zoom:80%;" />
 
 ### 4.修改字符编码
 
 将项目的文件编码修改为UTF-8。
 
-<img src="D:\personal\study_notes\springboot\Maven父子项目搭建指南\Encoding.png" alt="Encoding" style="zoom:80%;" />
+<img src="Maven父子项目搭建指南/Encoding.png" alt="Encoding" style="zoom:80%;" />
 
 ### 5. 注解生效
 
 注解生效激活。
 
-<img src="D:\personal\study_notes\springboot\Maven父子项目搭建指南\Annotation.png" alt="Annotation" style="zoom:80%;" />
+<img src="Maven父子项目搭建指南/Annotation.png" alt="Annotation" style="zoom:80%;" />
 
 ### 6. Java编译版本
 
 java编译版本选8。
 
-<img src="D:\personal\study_notes\springboot\Maven父子项目搭建指南\Java-Compile-Version.png" style="zoom:80%;" />
+<img src="Maven父子项目搭建指南/Java-Compile-Version.png" style="zoom:80%;" />
 
 ### 7. File Type过滤
 
 将`*.idea`、`*.iml`等不要展示的文件隐藏掉。
 
-<img src="D:\personal\study_notes\springboot\Maven父子项目搭建指南\File-Type.png" style="zoom:80%;" />
+<img src="Maven父子项目搭建指南/File-Type.png" style="zoom:80%;" />
 
 ### 8. 编写父工程POM文件
 
