@@ -52,186 +52,155 @@ pom.xml文件示例如下：
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cqcca.data.transfer</groupId>
-    <artifactId>data-transfer-system</artifactId>
-    <version>1.0</version>
-    <packaging>pom</packaging>
-    
-    <modules>
-        <module>data-transfer-common</module>
-        <module>data-transfer-module</module>
-    </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+  <groupId>org.cqcca.project</groupId>
+  <artifactId>cqcca-task-manage</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- mysql依赖 -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.26</version>
-                <scope>runtime</scope>
-            </dependency>
-            <!--工具包-->
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>5.3.4</version>
-            </dependency>
-            <!-- springboot引用 -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>2.5.4</version>
-            </dependency>
-            <!--Spring boot Redis-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-redis</artifactId>
-                <version>2.5.4</version>
-            </dependency>
-            <!-- web模板引用 -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-thymeleaf</artifactId>
-                <version>2.5.4</version>
-            </dependency>
-            <!-- JSR-303数据校验 -->
-            <dependency>
-                <groupId>org.hibernate.validator</groupId>
-                <artifactId>hibernate-validator</artifactId>
-                <version>7.0.1.Final</version>
-            </dependency>
-            <!-- mybatis引用 -->
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>2.2.0</version>
-            </dependency>
-            <!-- tk.mybatis引用 -->
-            <dependency>
-                <groupId>tk.mybatis</groupId>
-                <artifactId>mapper-spring-boot-starter</artifactId>
-                <version>2.1.5</version>
-            </dependency>
-            <!-- 热部署 -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-devtools</artifactId>
-                <version>2.5.4</version>
-                <scope>runtime</scope>
-                <optional>true</optional>
-            </dependency>
-            <!-- mysql依赖 -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.26</version>
-                <scope>runtime</scope>
-            </dependency>
-            <!-- 分页查询 -->
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper</artifactId>
-                <version>5.2.1</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>
-                <version>1.3.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper-spring-boot-starter</artifactId>
-                <version>1.3.0</version>
-            </dependency>
-            <!-- lombok简化开发 -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.18.20</version>
-                <optional>true</optional>
-            </dependency>
-            <!-- 工具类 -->
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>3.12.0</version>
-            </dependency>
-            <!-- beanutils -->
-            <dependency>
-                <groupId>commons-beanutils</groupId>
-                <artifactId>commons-beanutils</artifactId>
-                <version>1.9.4</version>
-            </dependency>
-            <!-- excel工具 -->
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi</artifactId>
-                <version>3.17</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.poi</groupId>
-                <artifactId>poi-ooxml</artifactId>
-                <version>3.17</version>
-            </dependency>
-            <dependency>
-                <groupId>xerces</groupId>
-                <artifactId>xercesImpl</artifactId>
-                <version>2.12.0</version>
-            </dependency>
-            <!-- spring-test引用 -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <version>2.5.4</version>
-                <scope>test</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.junit.vintage</groupId>
-                        <artifactId>junit-vintage-engine</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <!-- knife4j 接口文档 -->
-            <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-spring-boot-starter</artifactId>
-                <version>2.0.7</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-    
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.5.4</version>
-                <configuration>
-                    <fork>true</fork>
-                    <addResources>true</addResources>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <modules>
+    <module>cqcca-task-manage-common</module>
+    <module>cqcca-task-manage-modules</module>
+    <module>cqcca-task-manage-web</module>
+  </modules>
+
+  <name>Maven</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://maven.apache.org/</url>
+  <inceptionYear>2001</inceptionYear>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.6.4</version>
+  </parent>
+
+  <distributionManagement>
+    <site>
+      <id>website</id>
+      <url>scp://webhost.company.com/www/website</url>
+    </site>
+  </distributionManagement>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <mysql.version>8.0.26</mysql.version>
+    <sqlserver.version>9.2.1.jre8</sqlserver.version>
+    <druid.version>1.2.8</druid.version>
+    <mybatis.version>2.2.0</mybatis.version>
+    <mybatis-plus.version>3.4.1</mybatis-plus.version>
+    <lombok.version>1.18.22</lombok.version>
+    <commons-lang3.version>3.12.0</commons-lang3.version>
+    <commons-pool.version>1.6</commons-pool.version>
+    <commons-pool2.version>2.9.0</commons-pool2.version>
+    <mapstruct.version>1.4.1.Final</mapstruct.version>
+    <knife4j.version>2.0.7</knife4j.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- druid 数据源驱动 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
+      <!-- mysql数据源 -->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <!-- sqlserver数据源 -->
+      <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <version>${sqlserver.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <!-- mybatis引用 -->
+      <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>${mybatis.version}</version>
+      </dependency>
+      <!-- mybatis-plus引用 -->
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+      <!-- mybatis-plus-generator -->
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-generator</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+      <!-- log4j依赖 2.16.0 -->
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-to-slf4j</artifactId>
+        <version>${log4j2.version}</version>
+      </dependency>
+      <!-- lombok 简化开发 -->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <!-- 常用工具库 -->
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commons-lang3.version}</version>
+      </dependency>
+      <!-- 通用对象池 -->
+      <dependency>
+        <groupId>commons-pool</groupId>
+        <artifactId>commons-pool</artifactId>
+        <version>${commons-pool.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-pool2</artifactId>
+        <version>${commons-pool2.version}</version>
+      </dependency>
+      <!--mapStruct依赖-->
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${mapstruct.version}</version>
+      </dependency>
+      <!-- 注解处理器，根据注解自动生成mapper的实现 -->
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct-processor</artifactId>
+        <version>${mapstruct.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <!-- knife4j 接口文档 -->
+      <dependency>
+        <groupId>com.github.xiaoymin</groupId>
+        <artifactId>knife4j-spring-boot-starter</artifactId>
+        <version>${knife4j.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>
+
 ```
 
 
 
 ### 附录
 
-maven提供的41个骨架原型分别是：
+#### maven提供的41个骨架原型分别是：
 
 1. internal -> appfuse-basic-jsf (创建一个基于Hibernate，Spring和JSF的Web应用程序的原型) 
 2. internal -> appfuse-basic-spring (创建一个基于Hibernate，Spring和Spring MVC的Web应用程序的原型) 
@@ -274,4 +243,195 @@ maven提供的41个骨架原型分别是：
 39. internal -> myfaces-archetype-jsfcomponents (一种使用MyFaces创建定制JSF组件的简单的原型) 
 40. internal -> gmaven-archetype-basic (Groovy的基本原型) 
 41. internal -> gmaven-archetype-mojo (Groovy mojo 原型)
+
+#### 在spring-boot-dependencies中已添加的常用starter
+
+以下starter，当父项目配置spring-boot-starter-parent后，可以在子模块中直接引用，无需再声明版本号。
+
+``` xml
+<!-- springboot 热部署 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- springboot aop 切面编程 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-aop</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- springboot cache 数据缓存操作 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-cache</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- elasticsearch 分布式搜索 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- jpa 数据库操作 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>${h2.version}</version>
+</dependency>
+<!-- mongodb 文档数据库操作 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-mongodb</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- redis操作 默认客户端驱动为lettuce -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- freemarker 模板生成工具 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-freemarker</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- log4j 日志 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-log4j2</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- springboot 邮件发送 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-mail</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- springboot quartz 定时任务 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-quartz</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- springboot 安全认证 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- springboot test 单元测试 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- springboot thymeleaf 前端页面模板 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- springboot 数据校验 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-validation</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- springboot web启动器 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <version>2.5.4</version>
+</dependency>
+<!-- springboot websocket -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-websocket</artifactId>
+    <version>2.5.4</version>
+</dependency>
+```
+
+
+
+#### 在spring-boot-dependencies中已添加的其他常用工具
+
+以下工具已在spring-boot-dependencies中声明版本，当父项目配置spring-boot-starter-parent后，可以在子模块中直接引用，无需再声明版本号。
+
+``` xml
+<!-- sqlserver数据源 -->
+<dependency>
+    <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>mssql-jdbc</artifactId>
+    <version>${mssql-jdbc.version}</version>
+</dependency>
+<!-- mysql数据源 -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>${mysql.version}</version>
+    <exclusions>
+        <exclusion>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+<!-- 常用工具库 -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>${commons-lang3.version}</version>
+</dependency>
+<!-- 通用对象池 -->
+<dependency>
+    <groupId>commons-pool</groupId>
+    <artifactId>commons-pool</artifactId>
+    <version>${commons-pool.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-pool2</artifactId>
+    <version>${commons-pool2.version}</version>
+</dependency>
+<!-- log4j依赖 修复漏洞需要升级为2.16.0 -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-to-slf4j</artifactId>
+    <version>${log4j2.version}</version>
+</dependency>
+<!-- lombok简化开发 -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>${lombok.version}</version>
+</dependency>
+<!-- quartz定时任务 -->
+<dependency>
+    <groupId>org.quartz-scheduler</groupId>
+    <artifactId>quartz</artifactId>
+    <version>${quartz.version}</version>
+    <exclusions>
+        <exclusion>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+        </exclusion>
+        <exclusion>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>*</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+<dependency>
+    <groupId>org.quartz-scheduler</groupId>
+    <artifactId>quartz-jobs</artifactId>
+    <version>${quartz.version}</version>
+</dependency>
+```
 
