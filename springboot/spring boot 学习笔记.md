@@ -234,6 +234,17 @@ public class Person {
 }
 ```
 
+**使用该注解需要在pom中引用：**
+
+``` xml
+<!--configuration 装配-->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-configuration-processor</artifactId>
+    <optional>true</optional>
+</dependency>
+```
+
 
 
 #### @PropertySource
@@ -242,7 +253,7 @@ public class Person {
 
 属性：value：指定自定义的文件名称
 
-**细节：`@PropertySource`注解只能匹配的自定义的properties文件，不能匹配自定义的yaml文件。`@PropertySource`注解只用于标注配置文件的来源，需要配合`@Configuration`或`@Value`注解来使用。**
+**细节：`@PropertySource`注解只能匹配的自定义的properties文件，不能匹配自定义的yaml文件。`@PropertySource`注解只用于标注配置文件的来源，需要配合`@ConfigurationProperties`或`@Value`注解来使用。**
 
 ``` java
 @Component
@@ -277,7 +288,7 @@ private String name;
 
 
 
-#### @Configuration和@Value的区别
+#### @ConfigurationProperties和@Value的区别
 
 |                      | @ConfigurationProperties | @Value     |
 | -------------------- | ------------------------ | ---------- |
