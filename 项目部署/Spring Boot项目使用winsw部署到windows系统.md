@@ -1,6 +1,6 @@
 ## 一、将winsw解压，与打包好的jar包放在同一目录下
 
-![directory](E:\personal\study_notes\项目部署\Spring Boot项目使用winsw部署到windows系统\directory.png)
+![directory](Spring Boot项目使用winsw部署到windows系统/directory.png)
 
 
 
@@ -12,23 +12,21 @@
 
 **查看该文件夹下的.net framework安装情况**
 
-![version](E:\personal\study_notes\项目部署\Spring Boot项目使用winsw部署到windows系统\version.png)
+![version](Spring Boot项目使用winsw部署到windows系统/version.png)
 
 
 
 ## 三、根据最高版本选择对应的启动文件，并删去多余文件。
 
-![directory-2](E:\personal\study_notes\项目部署\Spring Boot项目使用winsw部署到windows系统\directory-2.png)
+![directory-2](Spring Boot项目使用winsw部署到windows系统/directory-2.png)
+
+**重命名启动文件与配置文件为同一名称，可取任意名称，保持一致即可**
+
+![directory-3](Spring Boot项目使用winsw部署到windows系统/directory-3.png)
 
 
 
-## 四、重命名启动文件与配置文件为同一名称，可取任意名称，保持一致即可
-
-![directory-3](E:\personal\study_notes\项目部署\Spring Boot项目使用winsw部署到windows系统\directory-3.png)
-
-
-
-## 五、修改配置文件，内容可参照下文
+## 四、修改配置文件，内容可参照下文
 
 ``` xml
 <service>
@@ -53,7 +51,7 @@
 
 
 
-## 六、在当前目录下打开终端，输入注册服务与启动服务命令
+## 五、在当前目录下打开终端，输入注册服务与启动服务命令
 
 **注册服务命令**
 
@@ -63,7 +61,7 @@
 
 > project_name.exe start
 
-![terminal](E:\personal\study_notes\项目部署\Spring Boot项目使用winsw部署到windows系统\terminal.png)
+![terminal](Spring Boot项目使用winsw部署到windows系统/terminal.png)
 
 
 
@@ -71,4 +69,4 @@
 
 
 
-![service](E:\personal\study_notes\项目部署\Spring Boot项目使用winsw部署到windows系统\service.png)
+![service](Spring Boot项目使用winsw部署到windows系统/service.png)
