@@ -200,7 +200,7 @@ pom.xml文件示例如下：
 
 ### 附录
 
-#### maven提供的41个骨架原型分别是：
+#### maven提供的41个骨架原型及其说明：
 
 1. internal -> appfuse-basic-jsf (创建一个基于Hibernate，Spring和JSF的Web应用程序的原型) 
 2. internal -> appfuse-basic-spring (创建一个基于Hibernate，Spring和Spring MVC的Web应用程序的原型) 

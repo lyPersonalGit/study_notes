@@ -1,9 +1,9 @@
 # Knife4j的依赖与配置
 
-依赖
+pom依赖
 
-``` java
-<!-- knife4j 接口文档 -->
+``` xml
+<!-- https://mvnrepository.com/artifact/com.github.xiaoymin/knife4j-spring-boot-starter -->
 <dependency>
     <groupId>com.github.xiaoymin</groupId>
     <artifactId>knife4j-spring-boot-starter</artifactId>
@@ -11,7 +11,7 @@
 </dependency>
 ```
 
-配置举例
+配置举例，当功能分布在多个模块下时，每个docket对应一个功能模块
 
 ``` java
 @Configuration
@@ -25,7 +25,7 @@ public class Knife4jConfig {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(new ApiInfoBuilder()
                         //.title("swagger-bootstrap-ui-demo RESTFUL APIs")
-                        .description("吉林省危险化学品罐车动态管理平台接口文档")
+                        .description("测试项目接口文档")
                         .termsOfServiceUrl("https://www.xx.com/")
                         .contact(new Contact("author", "index", "xx@qq.com"))
                         .version("1.0")
@@ -34,7 +34,27 @@ public class Knife4jConfig {
                 .groupName("系统管理模块")
                 .select()
                 //这里指定Controller扫描包路径
-				.apis(RequestHandlerSelectors.basePackage("com.cqcca.cygc.modules.system.controller"))
+				.apis(RequestHandlerSelectors.basePackage("com.example.project.modules.system.controller"))
+                .paths(PathSelectors.any())
+                .build();
+        return docket;
+    }
+    
+    @Bean(value = "securityApi")
+    public Docket securityApi() {
+        Docket docket = new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(new ApiInfoBuilder()
+                        //.title("swagger-bootstrap-ui-demo RESTFUL APIs")
+                        .description("测试项目接口文档")
+                        .termsOfServiceUrl("https://www.xx.com/")
+                        .contact(new Contact("author", "index", "xx@qq.com"))
+                        .version("1.0")
+                        .build())
+                //分组名称
+                .groupName("安全认证模块")
+                .select()
+                //这里指定Controller扫描包路径
+                .apis(RequestHandlerSelectors.basePackage("com.example.project.modules.security.controller"))
                 .paths(PathSelectors.any())
                 .build();
         return docket;

@@ -1,22 +1,22 @@
-# swagger2的配置以及注解，超详细！！
+# swagger2的配置以及注解
 
 ## swagger配置以及注解
 
 依赖
 
-```java
+```xml
 <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
-        </dependency>
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
+</dependency>
 <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
-        </dependency>
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.2</version>
+</dependency>
 ```
 
 ## 一、配置
@@ -127,7 +127,7 @@ public Docket docket2(){
 }
 ```
 
-### 
+
 
 ### 3. enabled配置
 
@@ -136,6 +136,8 @@ public Docket docket2(){
 ```java
 private boolean enabled = true;
 ```
+
+
 
 ### 4. applyDefaultResponseMessages配置
 
@@ -164,6 +166,8 @@ public Docket globalResponseMessage(RequestMethod requestMethod,
 }
 ```
 
+
+
 ### 5. host
 
 这个是文档的host信息，在swagger中测试的时候，访问的路径就是通过host属性来控制的
@@ -173,6 +177,8 @@ private String host = "";
 //默认值为空，
 //但是实际上显示的值为项目地址也就是：localhost:8080/
 ```
+
+
 
 ### 6.完整配置
 
@@ -241,6 +247,8 @@ swagger常用注解表
 | @ApiParam          | 方法参数上     | 单个方法参数               |
 
 显示详细信息
+
+
 
 ### 1. @Api 说明controller类
 
@@ -333,6 +341,8 @@ Authorization[] authorizations() default @Authorization(value = "");
 @Api(tags = {"登陆模块"},description = "相当牛逼的东西")
 ```
 
+
+
 ### 2. @ApiIgnore 隐藏controller类
 
  标注了该注解之后，扫描controller类就会忽略掉这个类，在swagger-ui里面就看不到了
@@ -354,6 +364,8 @@ Authorization[] authorizations() default @Authorization(value = "");
 //直接将注解放在类上就可以使用了
 ```
 
+
+
 ### 3. @ApiModel 说明实体类
 
  用于说明实体类的用途
@@ -365,6 +377,8 @@ Authorization[] authorizations() default @Authorization(value = "");
 ```java
 @ApiModel(value = "admin-auto" ,description = "管理员表")
 ```
+
+
 
 ### 4. @ApiModelProperty 说明实体类属性
 
@@ -519,6 +533,8 @@ get请求
 private int age;
 ```
 
+
+
 ### 5. @ JsonIgnore 隐藏实体类属性
 
 和 hidden=true 类似，用于隐藏该实体类字段，标注在实体类的参数上
@@ -528,6 +544,8 @@ private int age;
 @ApiModelProperty(required = true,position = 2)
 private String sex;
 ```
+
+
 
 ### 6. @ApiOperation 方法的说明
 
@@ -681,6 +699,8 @@ application/json, application/xml
 
 标注输入格式，与produces 一样
 
+
+
 ### 7. @ApiImplicitParam方法参数说明
 
 @ApiImplicitParam常用参数表：
@@ -799,6 +819,8 @@ public AdminEntity set( String name){
 
 写入的时候，swagger-ui不会给你显示这个参数，当然你可以手动写上去
 
+
+
 ### 8.@ApiImplicitParams注解
 
 这个注解是与@ApiImplicitParam注解结合使用的，无法单独使用
@@ -820,6 +842,8 @@ public Object set(@RequestParam("name") String name,@RequestParam("pass")String 
 }
 ```
 
+
+
 ### 9.@ApiResponse注解 返回值状态码
 
 该注解用于描述状态码
@@ -831,6 +855,8 @@ public Object set(@RequestParam("name") String name,@RequestParam("pass")String 
 ```java
 @ApiResponse(code = 200,message = "成功无错")
 ```
+
+
 
 ### 10.@ApiResponses注解
 
@@ -845,6 +871,8 @@ public Object set(@RequestParam("name") String name,@RequestParam("pass")String 
         @ApiResponse(code = 405,message = "不知道什么错"),
 })
 ```
+
+
 
 ### 11.@ApiParam注解 单个参数说明
 

@@ -1,3 +1,7 @@
+# WebMvcConfigurer配置详解
+
+
+
 ## 1. 简介
 
 WebMvcConfigurer配置类其实是`Spring`内部的一种配置方式，采用`JavaBean`的形式来代替传统的`xml`配置文件形式进行针对框架个性化定制，可以自定义一些Handler，Interceptor，ViewResolver，MessageConverter。基于java-based方式的spring mvc配置，需要创建一个**配置**类并实现**`WebMvcConfigurer`** 接口；
@@ -6,7 +10,7 @@ WebMvcConfigurer配置类其实是`Spring`内部的一种配置方式，采用`J
 
 
 
-## **2. WebMvcConfigurer接口**
+## 2. WebMvcConfigurer接口
 
 ```java
 public interface WebMvcConfigurer {
